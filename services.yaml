@@ -1,0 +1,109 @@
+"https://youla.ru/web-api/auth/request_code":
+  "data": "{'phone': '7%s'}"
+  "formating": false
+
+"https://api.sunlight.net/v3/customers/authorization/":
+  "data": "{'phone': '7%s'}"
+  "formating": false
+
+"https://api.tinkoff.ru/v1/sign_up":
+  "data": "{'phone': '7%s'}"
+  "formating": false
+
+"https://eda.yandex/api/v1/user/request_authentication_code":
+  "json": "{'phone_number': '7%s'}"
+  "formating": false
+
+"https://lenta.com/api/v2/authentication/requestValidationCode":
+  "json": "{'phone': '7%s'}"
+  "formating": false
+
+"https://my.telegram.org/auth/send_password":
+  "data": "{'phone': '+7%s'}"
+  "formating": false
+
+"https://unacademy.com/api/v1/user/get_app_link/":
+  "data": "{'phone': '7%s'}"
+  "formating": false
+
+"https://www.treebo.com/api/v2/auth/login/otp/":
+  "data": "{'phone_number': '7%s'}"
+  "formating": false
+
+"https://www.citilink.ru/registration/confirm/phone/+%s/":
+  "formating": true
+
+"https://prod.tvh.mts.ru/tvh-public-api-gateway/public/rest/general/send-code?msisdn=%s":
+  "formating": true
+
+"https://app.karusel.ru/api/v1/phone/":
+  "data": "{'phone': '7%s'}"
+  "formating": false
+
+"https://ok.ru/dk?cmd=AnonymRegistrationEnterPhone&st.cmd=anonymRegistrationEnterPhone":
+  "data": "{'st.r.phone': '+7%s'}"
+  "formating": false
+
+"https://u.icq.net/api/v48/rapi/auth/sendCode":
+  "json": "{'reqId': '66497-1613742053', 'params': {'phone': '7%s', 'language': 'ru-RU', 'route': 'sms', 'devId': 'ic1rtwz1s1Hj1O0r', 'application': 'icq'}}"
+  "formating": false
+
+"https://m.tiktok.com/node-a/send/download_link":
+  "json": "{'slideVerify': 0, 'language': 'ru', 'PhoneRegionCode': '7', 'Mobile': '%s', 'page': {'pageName': 'home', 'launchMode': 'direct', 'trafficType': ''}}"
+  "formating": false
+
+"https://www.frotels.com/appsendsms.php":
+  "data": "{'mobno': '7%s'}"
+  "formating": false
+
+"https://login.housing.com/api/v2/send-otp":
+  "data": "{'phone': '7%s'}"
+  "formating": false
+
+"https://porter.in/restservice/send_app_link_sms":
+  "data": "{'phone': '7%s'', 'referrer_string': '', 'brand': 'porter'}"
+  "formating": false
+
+"https://cityflo.com/website-app-download-link-sms/":
+  "data": "{'mobile_number': '7%s'}"
+  "formating": false
+
+"https://api.nnnow.com/d/api/appDownloadLink":
+  "data": "{'mobileNumber': '7%s'}"
+  "formating": false
+
+"https://unacademy.com/api/v1/user/get_app_link/":
+  "data": "{'phone': '7%s'}"
+  "formating": false
+
+"https://www.treebo.com/api/v2/auth/login/otp/":
+  "data": "{'phone_number': '7%s'}"
+  "formating": false
+
+"https://pharmeasy.in/api/auth/requestOTP":
+  "json": "{'contactNumber': '7%s'}"
+  "formating": false
+
+"https://www.mylescars.com/usermanagements/chkContact":
+  "data": "{'contactNo': '7%s'}"
+  "formating": false
+
+"https://api.dream11.com/sendsmslink":
+  "data": "{'siteId': '1', 'mobileNum': '7%s', 'appType': 'androidfull'}"
+  "formating": false
+
+"https://commonfront.paytm.com/v4/api/sendsms":
+  "data": "{'phone': '7%s', 'guid': '2952fa812660c58dc160ca6c9894221d'}"
+  "formating": false
+
+"https://www.flipkart.com/api/5/user/otp/generate":
+  "data": "{'loginId': '+7%s'}"
+  "formating": false
+
+"https://api.ivi.ru/mobileapi/user/register/phone/v6":
+  "data": "{'phone': '7%s'}"
+  "formating": false
+
+"https://api.delitime.ru/api/v2/signup":
+  "data": "{'SignupForm[username]': '7%s', 'SignupForm[device_type]': '3'}"
+  "formating": false
