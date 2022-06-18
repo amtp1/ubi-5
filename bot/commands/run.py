@@ -21,11 +21,12 @@ async def run(message: Message):
 
 @dp.message_handler(state=Phone.phone)
 async def get_phone(message: Message, state: FSMContext):
+    await state.finish()
     phone = re.match(r'^([\s\d]+)$', message.text).string
     if len(phone) <= 10:
-        return await message.answer("Номер является неккоректным!")
+        await message.answer("Номер не является ккоректным!")
+        return await run(message)
     await attack.attack(message, phone)
-    await state.finish()
 
 
 @dp.callback_query_handler(lambda query: query.data.startswith(("stop")))
