@@ -59,6 +59,6 @@ class Attack:
                 pass
 
     def load_services(self):
-        with open(rF"{SERVICES_FOLDER}\services.yaml", "r") as f:
+        with open(rF"{SERVICES_FOLDER}/services.yaml", "r") as f:
             services = yaml.load(f, Loader=yaml.FullLoader)
             return services
