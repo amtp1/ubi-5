@@ -9,10 +9,9 @@ from django.contrib.auth.base_user import AbstractBaseUser
 
 class UserProfile(AbstractBaseUser, PermissionsMixin):
     user_id = models.BigIntegerField(unique=True)
-    first_name = models.CharField(max_length=255, blank=True)
-    last_name = models.CharField(max_length=255, blank=True)
+    first_name = models.CharField(max_length=255, blank=True, null=True)
+    last_name = models.CharField(max_length=255, blank=True, null=True)
     username = models.CharField(max_length=128, blank=True, null=True)
-    last_active = models.DateTimeField(auto_now_add=False, null=True)
     date_joined = models.DateTimeField(auto_now_add=True, null=False)
     avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
 
